@@ -1,0 +1,39 @@
+function getTotal(student) {
+  return student.grade1 + student.grade2 + student.grade3;
+}
+
+function getAverage(student) {
+  const total = getTotal(student);
+  return Math.round(total / 3);
+}
+
+function getStudentTotalandAverage(student) {
+  const total = getTotal(student);
+  const average = getAverage(student);
+  console.log(total);
+  console.log(average);
+}
+
+
+function processData(input) {
+    //Enter your code here
+    const student = {
+          name: "Root",
+          grade1: 85,
+          grade2: 92,
+          grade3: 88
+    };
+
+    getStudentTotalandAverage(student);
+} 
+
+process.stdin.resume();
+process.stdin.setEncoding("ascii");
+_input = "";
+process.stdin.on("data", function (input) {
+    _input += input;
+});
+
+process.stdin.on("end", function () {
+   processData(_input);
+});
