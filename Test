@@ -17,12 +17,11 @@ function getStudentTotalandAverage(student) {
 
 function processData(input) {
     //Enter your code here
-    const student = {
-          name: "Root",
-          grade1: 85,
-          grade2: 92,
-          grade3: 88
-    };
+    const lines = input.split('\n');
+    const name = lines[0].trim();
+    const [grade1, grade2, grade3] = lines[1].trim().split(' ').map(Number);
+    
+    const student = {name, grade1, grade2, grade3};
 
     getStudentTotalandAverage(student);
 } 
