@@ -20,13 +20,23 @@ function createCounter(counterInitValue) {
 
 
 function processData(input) {
+    
     //Enter your code here
-    const counter = createCounter(0);
-    counter.increment();
-    counter.increment();
-    counter.decrement();
-    console.log(counter.getValue()); // Output: 1
-
+    const lines = input.trim().split("\n");
+    const counterInitValue = Number(lines[0]);
+    const counter = createCounter(counterInitValue);
+    
+    for (let i=1; i<lines.length; i++){
+        const operation = lines[i].trim();
+        
+        if(operation === "increment"){
+            counter.increment();
+        }else if(operation === "decrement"){
+            counter.decrement();
+        }else if(operation === "getValue"){
+            console.log(counter.getValue());
+        }
+    }
 } 
 
 process.stdin.resume();
